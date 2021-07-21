@@ -19,6 +19,7 @@ UBOOT_CONFIG[condor] = "r8a77980_condor_defconfig"
 UBOOT_CONFIG[eagle] = "r8a77970_eagle_defconfig"
 UBOOT_CONFIG[v3hsk] = "r8a77980_v3hsk_defconfig"
 UBOOT_CONFIG[v3msk] = "r8a77970_v3msk_defconfig"
+UBOOT_CONFIG[eagle] = "r8a77970_eagle-function_defconfig"
 
 # Set Image & SDK name for V3x
 IMAGE_NAME = "${IMAGE_BASENAME}-v3x${IMAGE_VERSION_SUFFIX}"
