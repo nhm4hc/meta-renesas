@@ -16,4 +16,4 @@ PV = "0.1"
 require kernel-module-cpurttdrv.inc
 
 KERNEL_MODULE_PROBECONF += "cpurttmod2"
-module_conf_cpurttmod = "blacklist cpurttmod2"
+module_conf_cpurttmod2 = "blacklist cpurttmod2"
