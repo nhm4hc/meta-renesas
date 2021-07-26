@@ -12,8 +12,8 @@ COMPATIBLE_MACHINE = "salvator-x|h3ulcb|m3ulcb|m3nulcb|ebisu|draak"
 
 RENESAS_BSP_URL = " \
     git://github.com/renesas-rcar/linux-bsp.git"
-BRANCH = "v5.10.41/rcar-5.1.0.rc1"
-SRCREV = "c3846eecec5eae54f3e5ef3310feaab07fd1a76d"
+BRANCH = "v5.10.41/rcar-5.1.0.rc2"
+SRCREV = "d24292f89027243ea4f4aed03640d852aab42316"
 
 SRC_URI = "${RENESAS_BSP_URL};nocheckout=1;branch=${BRANCH}"
 
@@ -56,8 +56,12 @@ SRC_URI_append = " \
 
 # Add ADSP ALSA driver
 SUPPORT_ADSP_ASOC = " \
-    file://ADSP-add-ADSP-sound-driver-source-final.patch \
-    file://update_kernel_device_tree_and_build_config_rc4.patch \
+    file://0001-Add-ADSP-sound-driver-source.patch \
+    file://0002-Add-document-file-for-ADSP-sound-driver.patch \
+    file://0003-ADSP-remove-HDMI-support-from-rcar-sound.patch \
+    file://0004-ADSP-integrate-ADSP-sound-for-H3-M3-M3N-board.patch \
+    file://0005-ADSP-add-build-for-ADSP-sound-driver.patch \
+    file://0006-ADSP-integrate-ADSP-sound-for-E3-board.patch \
     file://adsp.cfg \
 "
 
