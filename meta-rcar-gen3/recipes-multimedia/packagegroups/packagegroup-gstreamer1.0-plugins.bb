@@ -74,6 +74,7 @@ RDEPENDS_packagegroup-gstreamer1.0-plugins-video = " \
     gstreamer1.0-plugins-bad-videoparsersbad \
     gstreamer1.0-plugins-bad-mpegtsdemux \
     gstreamer1.0-plugins-bad-jpegformat \
+    gstreamer1.0-plugins-bad-kms \
     gstreamer1.0-plugins-ugly-asf \
     gstreamer1.0-libav \
 "
