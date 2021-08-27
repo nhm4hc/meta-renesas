@@ -6,12 +6,19 @@ LIC_FILES_CHKSUM = " \
 "
 
 RENESAS_CPURTTDRV_URL ?= "git://github.com/renesas-rcar/cpurttdrv.git"
-SRCREV = "d12570679075e13351bd7d27a1fe655548e99a79"
+SRCREV = "9fa5d65ceae71080a8bb7b9b9df0661d020e5ce5"
 
 PR = "r0"
 PV = "0.1"
 
 require kernel-module-cpurttdrv.inc
+
+do_install_append () {
+    install -d ${D}${prefix}/local/include
+    install -m 644 ${S}/cpurtt_common.h ${D}${prefix}/local/include
+}
+
+FILES_${PN} = "${prefix}/local/include/cpurtt_common.h"
 
 KERNEL_MODULE_PROBECONF += "cpurttmod"
 module_conf_cpurttmod = "blacklist cpurttmod"
