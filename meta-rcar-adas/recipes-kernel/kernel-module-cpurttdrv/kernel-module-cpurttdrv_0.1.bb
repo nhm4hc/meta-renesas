@@ -5,13 +5,17 @@ LIC_FILES_CHKSUM = " \
     file://${S}/MIT-COPYING;md5=fea016ce2bdf2ec10080f69e9381d378 \
 "
 
+inherit module
+
 RENESAS_CPURTTDRV_URL ?= "git://github.com/renesas-rcar/cpurttdrv.git"
 SRCREV = "9fa5d65ceae71080a8bb7b9b9df0661d020e5ce5"
 
+SRC_URI = "${RENESAS_CPURTTDRV_URL};nobranch=1"
+
+S = "${WORKDIR}/git"
+
 PR = "r0"
 PV = "0.1"
-
-require kernel-module-cpurttdrv.inc
 
 do_install_append () {
     install -d ${D}${prefix}/local/include
