@@ -20,9 +20,12 @@ PV = "0.1"
 do_install_append () {
     install -d ${D}${prefix}/local/include
     install -m 644 ${S}/cpurtt_common.h ${D}${prefix}/local/include
+    install -m 644 ${S}/cpurtt_common_userdef.h ${D}${prefix}/local/include
 }
 
-FILES_${PN} = "${prefix}/local/include/cpurtt_common.h"
-
+FILES_${PN} = " \
+    ${prefix}/local/include/cpurtt_common.h \
+    ${prefix}/local/include/cpurtt_common_userdef.h \
+"
 KERNEL_MODULE_PROBECONF += "cpurttmod"
 module_conf_cpurttmod = "blacklist cpurttmod"
