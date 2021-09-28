@@ -6,7 +6,7 @@ SRC_URI_append = " ${RENESAS_GST_PLUGINS_BAD_URL}"
 SRCREV = "0b00bd6365ddd87b05242d9d2b08955cf02e474e"
 
 require include/rcar-gen3-modules-common.inc
-DEPENDS += "weston libdrm mmngr-user-module linux-renesas"
+DEPENDS += "weston libdrm"
 
 S = "${WORKDIR}/git"
 
