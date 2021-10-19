@@ -89,6 +89,16 @@ do_compile_kernelmodules_append () {
         fi
     fi
 }
+ 
+do_deploy_append() {
+    # Remove the redundant device tree file (<device_tree>-<MACHINE>.dtb) that was created in the deploy directory
+    for dtbf in ${KERNEL_DEVICETREE}; do
+        dtb=`normalize_dtb "$dtbf"`
+        dtb_ext=${dtb##*.}
+        dtb_base_name=`basename $dtb .$dtb_ext`
+        rm -f $deployDir/$dtb_base_name-${KERNEL_DTB_LINK_NAME}.$dtb_ext
+    done
+}
 
 # uio_pdrv_genirq configuration
 KERNEL_MODULE_AUTOLOAD_append = " uio_pdrv_genirq"
