@@ -43,7 +43,6 @@ RDEPENDS_packagegroup-bsp-devpkg = " \
     opkg \
     perf \
     procps \
-    strace \
     vim \
     wget \
     ${@bb.utils.contains("IMAGE_FEATURES", "ssh-server-openssh", "", "dropbear",d)} \
