@@ -45,6 +45,7 @@ RDEPENDS_packagegroup-bsp-devpkg = " \
     libyaml \
     i2c-tools \
     stress \
+    spidev-dbg spidev-test \
 "
 
 # Various packages needed for testing
