@@ -8,4 +8,4 @@ RENESAS_BSP_SRCREV_rcar-v4x = "738bca027cf3eaa049a32da4be4d562e1782c7db"
 
 # Renesas Yocto BSP version
 BSP_RENESAS_VERSION_rcar-v3x = "Renesas-Yocto-v4.19.2"
-BSP_RENESAS_VERSION_rcar-v4x = "Renesas-Yocto-v6.0.1"
+BSP_RENESAS_VERSION_rcar-v4x = "Renesas-Yocto-v6.1.0"
