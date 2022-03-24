@@ -2,9 +2,9 @@ require recipes-kernel/linux-libc-headers/linux-libc-headers.inc
 
 RENESAS_BSP_URL = " \
     git://github.com/renesas-rcar/linux-bsp.git"
-BRANCH = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "rcar-5.1.4.rc3/saferendering.rc3", "v5.10.41/rcar-5.1.4", d)}"
+BRANCH = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "rcar-5.1.4.rc3/saferendering.rc5", "v5.10.41/rcar-5.1.4", d)}"
 SRCREV = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", \
-    "6db30eb4b3d5fde58dba2563c9b3c0a82f9919c0", \
+    "e248fa73307d81fd0577bf48b23c3e35749c7d88", \
     "4846ef7755062737891d10bf15da4721bfb79b04", d)}"
 
 SRC_URI = "${RENESAS_BSP_URL};branch=${BRANCH};protocol=https"
