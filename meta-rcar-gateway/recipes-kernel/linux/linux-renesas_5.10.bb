@@ -37,6 +37,13 @@ module_conf_uio_pdrv_genirq_append = ' options uio_pdrv_genirq of_id="generic-ui
 
 PACKAGES += "${PN}-uapi"
 
+do_download_firmware () {
+    install -d ${STAGING_KERNEL_DIR}/firmware
+    install -m 755 ${WORKDIR}/r8a779f0_ufs.bin ${STAGING_KERNEL_DIR}/firmware/
+}
+
+addtask do_download_firmware after do_configure before do_compile
+
 # Install S4 specific UAPI headers and ufs firmware
 do_install_append() {
     install -d ${D}/usr/include/linux/
@@ -45,7 +52,7 @@ do_install_append() {
     install -m 0644 ${STAGING_KERNEL_DIR}/include/uapi/linux/rcar-ipmmu-domains.h ${D}/usr/include/linux/
     install -m 0644 ${STAGING_KERNEL_DIR}/include/uapi/linux/renesas_uioctl.h ${D}/usr/include/linux/
     mv ${D}/lib/modules/${KERNEL_VERSION}/kernel/drivers/dma/dmatest.ko ${D}/lib/modules/${KERNEL_VERSION}/extra/
-    install -m 0644 ${S}/r8a779f0_ufs ${D}/lib/firmware/
+    install -m 0644 ${S}/firmware/r8a779f0_ufs.bin ${D}/lib/firmware/
 }
 
 FILES_${PN}-uapi = "/usr/include"
