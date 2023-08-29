@@ -10,5 +10,5 @@ IMAGE_INSTALL_append_rcar = " \
     kernel-devicetree \
     kernel-modules \
 "
-IMAGE_INSTALL_append_rcar-v4x = "nvme-initscripts"
+IMAGE_INSTALL_append_r8a779g0 = "nvme-initscripts"
 
