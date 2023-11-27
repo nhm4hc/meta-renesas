@@ -32,6 +32,7 @@ do_compile() {
     fi
 
     export MMNGR_IPMMU_MMU_CONFIG="IPMMU_MMU_DISABLE"
+    export MMNGR_VALIDATE_CONFIG="MMNGR_ADDRESS_VALIDATION"
 
     cd ${S}/${MMNGR_DRV_DIR}/drv
     install -d ${INCSHARED}
