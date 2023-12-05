@@ -1,0 +1,34 @@
+From 0168ffb80b51f415a6b32bea620e7a0d37a05f01 Mon Sep 17 00:00:00 2001
+From: Hung Ngo <hung.manhngo@hitachivantara.com>
+Date: Tue, 5 Dec 2023 13:58:44 +0700
+Subject: [PATCH] enable lossy mode
+
+---
+ plat/renesas/common/include/rcar_def.h | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/plat/renesas/common/include/rcar_def.h b/plat/renesas/common/include/rcar_def.h
+index 68babff4b..9d13cdaef 100644
+--- a/plat/renesas/common/include/rcar_def.h
++++ b/plat/renesas/common/include/rcar_def.h
+@@ -298,13 +298,13 @@
+ #define LOSSY_FMT_YUV422INTLV		(0x20000000U)
+ #define LOSSY_FMT_ARGB8888		(0x40000000U)
+ #define LOSSY_ST_ADDR0			(0x54000000U)
+-#define LOSSY_END_ADDR0			(0x57000000U)
++#define LOSSY_END_ADDR0			(0x56000000U)
+ #define LOSSY_FMT0			LOSSY_FMT_YUVPLANAR
+ #define LOSSY_ENA_DIS0			LOSSY_ENABLE
+-#define LOSSY_ST_ADDR1			0x0U
+-#define LOSSY_END_ADDR1			0x0U
++#define LOSSY_ST_ADDR1			(0x56000000U)
++#define LOSSY_END_ADDR1			(0x57000000U)
+ #define LOSSY_FMT1			LOSSY_FMT_ARGB8888
+-#define LOSSY_ENA_DIS1			LOSSY_DISABLE
++#define LOSSY_ENA_DIS1			LOSSY_ENABLE
+ #define LOSSY_ST_ADDR2			0x0U
+ #define LOSSY_END_ADDR2			0x0U
+ #define LOSSY_FMT2			LOSSY_FMT_YUV422INTLV
+-- 
+2.25.1
+

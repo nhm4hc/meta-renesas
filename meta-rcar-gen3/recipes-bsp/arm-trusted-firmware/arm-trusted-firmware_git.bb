@@ -14,6 +14,10 @@ BRANCH = "rcar-gen3_v2.9"
 SRC_URI = "git://github.com/renesas-rcar/arm-trusted-firmware.git;branch=${BRANCH};protocol=https"
 SRCREV = "9cdb21f75157fc82e8ca104aa21c4ab722383b04"
 
+SRC_URI_append = " \
+    file://0001-enable-lossy-mode.patch \
+"
+
 PV = "v2.9+renesas+git${SRCPV}"
 
 COMPATIBLE_MACHINE = "(salvator-x|ulcb|ebisu|draak)"
