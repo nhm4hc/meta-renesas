@@ -11,13 +11,11 @@ require include/adsp-control.inc
 COMPATIBLE_MACHINE = "salvator-x|h3ulcb|m3ulcb|m3nulcb|ebisu|draak"
 
 RENESAS_BSP_URL = " \
-    git://git@rcar-env.dgn.renesas.com:/linuxbsp_yocto/linux-bsp.git"
-BRANCH = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "rcar-5.1.4.rc3/saferendering.rc9", "v5.10.194/rcar-5.3.0.rc2", d)}"
-SRCREV = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", \
-    "e2037726e5f6c3d6de6bc7d78b50ea9e2248a00d", \
-    "bc883423e9bee924c4946f74cbae8cbcc0816326", d)}"
+    git://github.com/nhm4hc/linux-bsp.git"
+BRANCH = "v5.10.194/rcar-5.3.0.rc5"
+SRCREV = "76f12f95c2fc9bb202b56a3d22200d483e231a6e"
 
-SRC_URI = "${RENESAS_BSP_URL};nocheckout=1;branch=${BRANCH};protocol=ssh"
+SRC_URI = "${RENESAS_BSP_URL};nocheckout=1;branch=${BRANCH};protocol=https"
 
 LINUX_VERSION ?= "5.10.194"
 PV = "${LINUX_VERSION}+git${SRCPV}"
