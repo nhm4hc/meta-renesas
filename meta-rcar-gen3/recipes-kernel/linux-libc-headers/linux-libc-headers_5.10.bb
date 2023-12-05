@@ -1,13 +1,13 @@
 require recipes-kernel/linux-libc-headers/linux-libc-headers.inc
 
 RENESAS_BSP_URL = " \
-    git://git@rcar-env.dgn.renesas.com:/linuxbsp_yocto/linux-bsp.git"
-BRANCH = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "rcar-5.1.4.rc3/saferendering.rc9", "v5.10.194/rcar-5.3.0.rc2", d)}"
+    git://github.com/renesas-rcar/linux-bsp.git"
+BRANCH = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", "rcar-5.1.4.rc3/saferendering.rc9", "v5.10.194/rcar-5.3.0", d)}"
 SRCREV = "${@oe.utils.conditional("USE_SAFE_RENDERING", "1", \
     "e2037726e5f6c3d6de6bc7d78b50ea9e2248a00d", \
-    "bc883423e9bee924c4946f74cbae8cbcc0816326", d)}"
+    "52ad0529fbef18dd501329a4e7e8acfe636e74c9", d)}"
 
-SRC_URI = "${RENESAS_BSP_URL};branch=${BRANCH};protocol=ssh"
+SRC_URI = "${RENESAS_BSP_URL};branch=${BRANCH};protocol=https"
 
 # Add module.lds
 SRC_URI_append = " \
