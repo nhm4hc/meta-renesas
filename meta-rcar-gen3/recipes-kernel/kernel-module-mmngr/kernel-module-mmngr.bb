@@ -57,6 +57,7 @@ do_install () {
     install -m 644 ${S}/${MMNGR_DRV_DIR}/include/mmngr_private.h ${KERNELSRC}/include/
     install -m 644 ${S}/${MMNGR_DRV_DIR}/include/mmngr_public_cmn.h ${KERNELSRC}/include/
     install -m 644 ${S}/${MMNGR_DRV_DIR}/include/mmngr_private_cmn.h ${KERNELSRC}/include/
+    install -m 644 ${S}/${MMNGR_DRV_DIR}/include/mmngr_validate.h ${KERNELSRC}/include/
 
     # Install shared header file to ${includedir}
     install -m 644 ${S}/${MMNGR_DRV_DIR}/include/mmngr_public_cmn.h ${D}/${includedir}/
